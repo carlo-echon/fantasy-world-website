@@ -3,8 +3,13 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-16">
+
+      <div className="flex flex-row items-center justify-between w-full">
+        <h1 className="text-black">Secret 1</h1>
+        <h1 className="text-2xl">FantasyLand: A TableTop Worldbuilding Project</h1>
+        <a className="bg-black text-black transition-colors border rounded border-black hover:border-white hover:bg-gray-700 hover:text-white" href="/login">Login</a>
+      </div>
       
-      <h1 className="text-2xl">FantasyLand: A TableTop Worldbuilding Project</h1>
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <a
