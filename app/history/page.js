@@ -15,6 +15,7 @@ import {useDisclosure} from '@nextui-org/use-disclosure';
 import { getAllHistory, postHistory } from "./services/historyService";
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
+import { checkIsAdmin } from "../utils/auth";
 
 
 
@@ -26,6 +27,7 @@ export default function History() {
     const [historyDate, setHistoryDate] = useState("");
     const [historyEvent, setHistoryEvent] = useState("");
     const [historyDescription, setHistoryDesc] = useState("");
+    const [isAdmin, setIsAdmin] = useState(checkIsAdmin());
 
     const handlePost = async () => {
       try{
@@ -62,11 +64,13 @@ export default function History() {
 
     return(
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
+            
             <div className="w-full">
                 <div className="flex justify-center">
                     <h1 className="text-2xl">Chronus Grimoire: History of the Known World</h1>
                 </div>
-                <div className="flex justify-end">
+                { isAdmin &&
+                  <div className="flex justify-end">
                   <>
                   <Button className="border rounded-lg border-white text-center bg-green-700 hover:bg-green-800 px-4 py-2"
                     onClick={onOpen}>
@@ -88,20 +92,21 @@ export default function History() {
                   setHistoryDate(e.target.value);
                 }}
                 classNames={{
-                  label: "text-white/90",
+                  label: "!text-white",
                   input: [
-                    "bg-default-700/50",
-                    "dark:text-white/60",
-                    "dark:placeholder:text-white/60",
+                    "!text-white",
+                    
                   ],
-                  innerWrapper: "bg-transparent",
+                  innerWrapper: "bg-black",
                   inputWrapper: [
-                    "bg-default/60",
-
-                    "hover:bg-default-200/70",
-                    "dark:hover:bg-default/70",
-                    "group-data-[focus=true]:bg-default-200/50",
-                    "dark:group-data-[focus=true]:bg-default/60",
+                    "bg-black",
+                    "border", // Add border
+                    "border-white",
+                    "border-md", // Specify border color
+                    "hover:bg-black",
+                    "dark:hover:bg-black",
+                    "group-data-[focus=true]:bg-black",
+                    "dark:group-data-[focus=true]:bg-black",
                     "!cursor-text",
                   ],
                 }}
@@ -110,15 +115,52 @@ export default function History() {
                 type="text" 
                 label="Event" 
                 labelPlacement={"outside"} 
-                color="lengua" 
                 placeholder="Enter the Event"
                 onChange={(e) => {
                   setHistoryEvent(e.target.value);
+                }}
+                classNames={{
+                  label: "!text-white",
+                  input: [
+                    "!text-white",
+                    
+                  ],
+                  innerWrapper: "bg-black",
+                  inputWrapper: [
+                    "bg-black",
+                    "border", // Add border
+                    "border-white",
+                    "border-md", // Specify border color
+                    "hover:bg-black",
+                    "dark:hover:bg-black",
+                    "group-data-[focus=true]:bg-black",
+                    "dark:group-data-[focus=true]:bg-black",
+                    "!cursor-text",
+                  ],
                 }}/>
                 <Textarea 
                 label="Description"
                 placeholder="Enter your description" 
-                className="w-full"
+                classNames={{
+                  label: "!text-white",
+                  input: [
+                    "!text-white",
+                    
+                  ],
+                  innerWrapper: "bg-black",
+                  inputWrapper: [
+                    "bg-black",
+                    "w-full",
+                    "border", // Add border
+                    "border-white",
+                    "border-md", // Specify border color
+                    "hover:bg-black",
+                    "dark:hover:bg-black",
+                    "group-data-[focus=true]:bg-black",
+                    "dark:group-data-[focus=true]:bg-black",
+                    "!cursor-text",
+                  ],
+                }}
                 onChange={(e) => {
                   setHistoryDesc(e.target.value);
                 }}/>
@@ -138,6 +180,8 @@ export default function History() {
                   </>
                       
                 </div>
+                }
+                
             </div>
 
             <div className="grid text-center grid-cols-4 col-span-4 gap-3">
@@ -161,6 +205,9 @@ export default function History() {
                 <div className="italic text-base">
                     - J.R.R Tolkien
                 </div>
+                {
+              isAdmin && <div className="text-white">Admin Mode On</div>
+            }
             </div>
         </main>
     );

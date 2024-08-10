@@ -3,8 +3,6 @@ import { buildHeaders } from "@/app/helpers/apiHelper";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
-
-
 const handleError = (error) => {
     if (error.response) {
       throw new Error(`Error: ${error.response.data.message || error.response.statusText}`);
@@ -42,6 +40,16 @@ export const deleteOneHistory = (historyid) => {
 export const getOneHistory = (historyid) => {
   return axios.get(
     `${API_BASE_URL}/history/${historyid}`
+  )
+}
+
+export const updateOneHistory = (historyid, args) => {
+  return axios.put(
+    `${API_BASE_URL}/history/${historyid}`,
+    args,
+    {
+      headers: buildHeaders() 
+    }
   )
 }
 
