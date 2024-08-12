@@ -20,7 +20,6 @@ import { checkIsAdmin } from "../utils/auth";
 
 
 export default function History() {
-    const router = useRouter();
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [history, setHistory] = useState([]);
     const [error, setError] = useState(null);
@@ -72,10 +71,10 @@ export default function History() {
                 { isAdmin &&
                   <div className="flex justify-end">
                   <>
-                  <Button className="border rounded-lg border-white text-center bg-green-700 hover:bg-green-800 px-4 py-2"
+                  <button className="border rounded-lg border-white text-center bg-green-700 hover:bg-green-800 px-4 py-2"
                     onClick={onOpen}>
                         Add
-                  </Button>
+                  </button>
             
         <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="border-white border rounded bg-black text-white" backdrop={"blur"}>
         <ModalContent>
@@ -170,7 +169,7 @@ export default function History() {
                   Close
                 </Button>
                 <Button color="primary" onClick={handlePost}>
-                  Add
+                  Confirm
                 </Button>
               </ModalFooter>
             </>
