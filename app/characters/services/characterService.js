@@ -13,7 +13,7 @@ const handleError = (error) => {
     }
   };
 
-  export const getAllCharacters = () => {
+export const getAllCharacters = () => {
     return axios.get(
         `${API_BASE_URL}/characters`
     )

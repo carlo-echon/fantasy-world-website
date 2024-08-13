@@ -242,7 +242,7 @@ export default function Characters() {
 
             <div className="border rounded-lg border-white text-center text-md p-6">
               <div>
-                When characters are really alive, before their author, the latter does nothing but follow them in their action..
+                When characters are really alive, before their author, the latter does nothing but follow them in their action.
               </div>
               <div className="italic text-base">
                 - Luigi Pirandello
