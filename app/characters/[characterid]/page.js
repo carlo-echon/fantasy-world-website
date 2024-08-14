@@ -247,7 +247,7 @@ export default function CharacterDetail() {
                    <Modal isOpen={modalDeleteDisclosure.isOpen} onOpenChange={modalDeleteDisclosure.onOpenChange} className="border-white border rounded bg-black text-white" backdrop={"blur"}>
                   
                     <ModalContent>
-                    <ModalHeader className="flex flex-col gap-1">Delete History Entry?</ModalHeader>
+                    <ModalHeader className="flex flex-col gap-1">Delete Character Entry?</ModalHeader>
                       <p className="text-xl text-white text-center">Are you sure you want to delete this entry?</p>
                       <ModalFooter>
                       <Button color="danger" variant="light" onClick={modalDeleteDisclosure.onClose}>
