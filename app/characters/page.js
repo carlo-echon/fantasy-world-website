@@ -62,6 +62,7 @@ export default function Characters() {
               <h1 className="text-2xl">Warden's Scroll: Lives and Lineages</h1>
             </div>
 
+            {isAdmin && 
             <div className="flex justify-end">
               <>
                 <button className="border rounded-lg border-white text-center bg-green-700 hover:bg-green-800 px-4 py-2"
@@ -224,6 +225,7 @@ export default function Characters() {
                 </Modal>
               </>
             </div>
+            }
           </div>
 
           <div className="grid text-center grid-cols-4 col-span-4 gap-3">

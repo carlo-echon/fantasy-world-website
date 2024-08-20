@@ -60,6 +60,7 @@ export default function Locations() {
                     <h1 className="text-2xl">Cartographer's Codex: Realms and Regions</h1>
                 </div>
 
+                {isAdmin && 
                 <div className="flex justify-end">
                     <>
                     <button className="border rounded-lg border-white text-center bg-green-700 hover:bg-green-800 px-4 py-2"
@@ -166,6 +167,7 @@ export default function Locations() {
                 </Modal>
                     </>
                 </div>
+                }
             </div>
 
             <div className="grid text-center grid-cols-4 col-span-4 gap-3">

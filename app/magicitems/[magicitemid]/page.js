@@ -77,7 +77,12 @@ export default function MagicItemDetail() {
             </div>
 
             <div className="text-white text-3xl">{currentMagicItem.magicitemname}</div>
-            
+            { !isAdmin && 
+            <div className="text-black">
+              Secret 4
+            </div>
+            }
+            { isAdmin &&
             <div className="table table-row gap-5">
                 <>
                 <button className="border rounded-lg border-white text-center bg-green-700 hover:bg-green-800 px-4 py-2"
@@ -205,6 +210,7 @@ export default function MagicItemDetail() {
                     </Modal>
                  </>
             </div>
+            }
             </div>
 
             <div className="border border-white rounded border-md">

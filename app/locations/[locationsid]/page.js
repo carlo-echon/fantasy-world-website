@@ -80,7 +80,13 @@ export default function LocationDetail() {
             </div>
 
             <div className="text-white text-3xl">{currentLocation.locationsname}</div>
+            { !isAdmin && 
+            <div className="text-black">
+              Secret 3
+            </div>
+            }
 
+            { isAdmin &&
             <div className="table table-row gap-5">
                 <>
                 <button className="border rounded-lg border-white text-center bg-green-700 hover:bg-green-800 px-4 py-2"
@@ -208,6 +214,7 @@ export default function LocationDetail() {
                     </Modal>
                  </>
             </div>
+            }
             </div>
 
             <div className="border border-white rounded border-md">
