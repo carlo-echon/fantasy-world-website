@@ -54,7 +54,7 @@ export default function History() {
       };
   
       getHistory();
-    }, []);
+    }, [error]);
 
     useEffect(() => {
       console.log('History state updated:', history); // Log the updated history state

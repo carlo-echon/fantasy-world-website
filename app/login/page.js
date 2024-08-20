@@ -17,7 +17,7 @@ export default function Login() {
       if (storedIsAdmin) {
         setIsAdmin(JSON.parse(storedIsAdmin));
       }
-    }, []);
+    }, [storedIsAdmin]);
 
 
     const handleLogin = async() => {

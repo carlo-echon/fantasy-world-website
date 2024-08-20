@@ -39,7 +39,7 @@ export default function MagicItems() {
     };
 
     getMagicItems();
-  }, []);
+  }, [error]);
 
   const handlePost = async() => {
     try{

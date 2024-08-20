@@ -39,7 +39,7 @@ export default function Locations() {
         };
     
         getLocations();
-      }, []);
+      }, [error]);
 
     const handlePost = async() => {
         try{
