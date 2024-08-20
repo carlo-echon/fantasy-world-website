@@ -16,6 +16,7 @@
     "@nextui-org/theme": "^2.2.9",
     "@nextui-org/use-disclosure": "^2.0.10",
     "axios": "^1.7.3",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.3.19",
     "next": "14.2.5",
     "react": "^18.2.0",
