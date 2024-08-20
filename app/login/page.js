@@ -23,7 +23,7 @@ export default function Login() {
     const handleLogin = async() => {
         try{
           const loginDetails = {username, password}
-          const result = await getOneUser("6", loginDetails);
+          const result = await getOneUser("3", loginDetails);
           console.log(result.data.isadmin);
           setCurrentUser(result.data);
           const adminStatus = result.data.isadmin;
